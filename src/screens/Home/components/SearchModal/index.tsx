@@ -27,10 +27,13 @@ const SearchModal: FC<Props> = ({modalVisible, closeModal, setActiveTab}) => {
     }
   }, 400);
 
-  const setLocation = useCallback((name: string) => {
-    setActiveTab(0);
-    dispatch(getWeatherInfoByName(name));
-  }, []);
+  const setLocation = useCallback(
+    (name: string) => {
+      setActiveTab(0);
+      dispatch(getWeatherInfoByName(name));
+    },
+    [setActiveTab],
+  );
 
   return (
     <>

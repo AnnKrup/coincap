@@ -53,6 +53,7 @@ function Home(): JSX.Element {
       <View style={styles.disabledLocationWrapper}>
         <Text style={styles.disabledLocationText}>Location is disabled</Text>
         <SearchModal
+          setActiveTab={setActiveTab}
           modalVisible={modalVisible}
           closeModal={() => setModalVisible(false)}
         />
@@ -95,6 +96,7 @@ function Home(): JSX.Element {
           hours={weatherInfo.forecast.forecastday[selectedDay].hour}
         />
         <SearchModal
+          setActiveTab={setActiveTab}
           modalVisible={modalVisible}
           closeModal={() => setModalVisible(false)}
         />
