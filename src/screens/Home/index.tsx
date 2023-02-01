@@ -32,8 +32,10 @@ function Home(): JSX.Element {
 
   const dispatch = useAppDispatch();
   const [modalVisible, setModalVisible] = useState(false);
+  const [activeTab, setActiveTab] = useState(0);
 
   const loadMyLocationWeatherInfo = useCallback(() => {
+    setActiveTab(0);
     dispatch(actions.clearLocation());
     dispatch(getWeatherInfo(1));
   }, []);
@@ -75,7 +77,7 @@ function Home(): JSX.Element {
     <SafeAreaView style={styles.safeAreaStyles}>
       <ScrollView style={styles.wrapper}>
         <View>
-          <HeaderTopButtons />
+          <HeaderTopButtons activeTab={activeTab} setActiveTab={setActiveTab} />
           {!onlyOneDay && (
             <DaysList forecastday={weatherInfo.forecast.forecastday} />
           )}

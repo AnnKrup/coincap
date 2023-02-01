@@ -6,5 +6,3 @@ export const selectSelectedDay = (state: RootState) => state.days.selectedDay;
 
 export const selectLocationStatus = (state: RootState) =>
   state.days.locationDisabled && !state.days.locationSelected;
-
-export const selectLocation = (state: RootState) => state.days.locationSelected;
