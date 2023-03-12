@@ -1,13 +1,13 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Home from '../screens/Home';
 import Coins from '../screens/Coins';
+import {COINS} from '../constants';
 
 const Tab = createBottomTabNavigator();
 function TabNavigator() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Coins" component={Coins} />
+      <Tab.Screen name={COINS} component={Coins} />
     </Tab.Navigator>
   );
 }

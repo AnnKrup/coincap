@@ -5,6 +5,7 @@ import Login from '../screens/Login';
 import TabNavigator from './TabNavigator';
 import {useAppSelector} from '../store/hooks';
 import {selectLogin} from '../screens/Login/slice/selectors';
+import {LOGIN, TABS} from '../constants';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,8 +15,8 @@ function MainNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {!login && <Stack.Screen name="Login" component={Login} />}
-        {login && <Stack.Screen name="Tabs" component={TabNavigator} />}
+        {!login && <Stack.Screen name={LOGIN} component={Login} />}
+        {login && <Stack.Screen name={TABS} component={TabNavigator} />}
       </Stack.Navigator>
     </NavigationContainer>
   );

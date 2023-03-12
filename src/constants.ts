@@ -11,3 +11,7 @@ export const DAYS = [
   'Friday',
   'Saturday',
 ];
+
+export const LOGIN = 'Login';
+export const TABS = 'Tabs';
+export const COINS = 'Coins';

@@ -3,11 +3,13 @@ import {createSlice} from '@reduxjs/toolkit';
 export interface CoinsState {
   coins: any[];
   loading: boolean;
+  error: boolean;
 }
 
 export const initialState: CoinsState = {
   coins: [],
   loading: false,
+  error: false,
 };
 
 const slice = createSlice({
@@ -15,8 +17,17 @@ const slice = createSlice({
   initialState,
   reducers: {
     getCoins(state, action) {
-      console.log('action', action);
       state.coins = state.coins.concat(action.payload.data);
+      state.loading = false;
+      state.error = false;
+    },
+    setLoading(state) {
+      state.loading = true;
+      state.error = false;
+    },
+    setError(state) {
+      state.loading = false;
+      state.error = true;
     },
   },
 });
